@@ -18,7 +18,4 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::group(['prefix' => 'scraping', 'controller' => ScrapeController::class], function() {
-    Route::get('/', 'scraping')->name('scraping');
-    Route::get('/clear', 'clearRate')->name('scraping.clear');
-});
+Route::get('/scraping/clear', [ScrapeController::class, 'clearRate'])->name('scraping.clear');
