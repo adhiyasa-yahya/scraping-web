@@ -7,5 +7,5 @@ php artisan schedule:work
 
 ### for running queue locally 
 ```
-php artisan schedule:work
+php artisan queue:work
 ```
