@@ -1,4 +1,4 @@
-## Run schedule or job laravel localy 
+## Run schedule and job laravel localy 
 
 ### for running tasks locally 
 ```
