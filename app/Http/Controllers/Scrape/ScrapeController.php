@@ -51,7 +51,10 @@ class ScrapeController extends Controller
         });
 
         $res = array_merge(["meta" => $meta], ["rate" => $rates->toArray()]);
-        Storage::disk('public')->put("scraping/rate-".date("d-m-Y--H-i-s").".json", json_encode($res));
+        $filename = "rate-".date("d-m-Y--H-i-s").".json";
+        Storage::disk('public')->put("scraping/$filename", json_encode($res));
+
+        return redirect()->back()->withSuccess("Scraping berhasil, $filename berhasil disimpan");
     }
 
     public function clearRate()
